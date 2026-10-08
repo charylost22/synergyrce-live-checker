@@ -26,5 +26,7 @@ jobs:
       - name: Install TikTokLive
         run: python -m pip install TikTokLive
 
-      - name: Check TikTok accounts
-        run: python check_live.py
+- name: Check TikTok accounts
+  env:
+    CLOUDFLARE_LIVE_TOKEN: ${{ secrets.CLOUDFLARE_LIVE_TOKEN }}
+  run: python check_live.py
